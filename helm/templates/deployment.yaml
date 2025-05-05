@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx-dp
 spec:
-  replicas: {{ .Values.deployment.replica }}
+  replicas: {{ .Values.deployment.replica}}
   selector:
     matchLabels:
       app: nginx-dp
@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: manjudbadevops/deployment: {{ .Values.deployment.version }}
+        image: manjudbadevops/deployment:{{ .Values.deployment.version }}
