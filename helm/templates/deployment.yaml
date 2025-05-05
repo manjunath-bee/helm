@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-dp
+spec:
+  replicas: {{ .Values.deployment.replica }}
+  selector:
+    matchLabels:
+      app: nginx-dp
+  template:
+    metadata:
+      labels:
+        app: nginx-dp
+    spec:
+      containers:
+      - name: nginx
+        image: manjudbadevops/deployment: {{ .Values.deployment.version }}
